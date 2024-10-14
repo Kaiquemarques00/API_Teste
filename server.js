@@ -2,12 +2,14 @@ import express from "express";
 import env from "dotenv";
 import pg from "pg";
 import bcrypt from 'bcrypt';
+import cors from 'cors';
 
 // aplicativo express
 const app = express();
 
 // uso do middleware para dados json, para parsear json
 app.use(express.json());
+app.use(cors());
 env.config();
 
 // inserindo informações para conexão no banco
