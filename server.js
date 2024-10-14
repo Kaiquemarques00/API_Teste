@@ -16,7 +16,7 @@ const db = new pg.Pool({
     host: process.env.HOST,
     database: process.env.DATABASE,
     password: process.env.PASSWORD,
-    port: process.env.PORT,
+    port: process.env.PGPORT || 5432,
     ssl: {
       rejectUnauthorized: false
     }
@@ -83,6 +83,6 @@ app.post("/user", async (req, res) => {
 });
 
 // inicia o servidor na porta 3000 e 
-app.listen(process.env.PORTAPI ? Number(process.env.PORTAPI) : 3000, () => {
+app.listen(process.env.PORT ? Number(process.env.PORTAPI) : 3000, () => {
   console.log("HTTP Server Running");
 });
