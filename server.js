@@ -11,7 +11,7 @@ app.use(express.json());
 env.config();
 
 // inserindo informações para conexão no banco
-const db = new pg.Client({
+const db = new pg.Pool({
     user: process.env.USER,
     host: process.env.HOST,
     database: process.env.DATABASE,
