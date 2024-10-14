@@ -83,6 +83,6 @@ app.post("/user", async (req, res) => {
 });
 
 // inicia o servidor na porta 3000 e 
-app.listen(process.env.PORT ? Number(process.env.PORTAPI) : 3000, () => {
+app.listen(process.env.PORT ? Number(process.env.PORT) : 3333, () => {
   console.log("HTTP Server Running");
 });
